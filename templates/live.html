@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block app_content %}
+        <a class="btn btn-warning home" href="/">На главную</a>
+        <a class="btn btn-info refresh" href="/live/">Создать другую жизнь</a>
+        <div class="counter">{{ counter }}</div>
+        <table class="world">
+            {% for i in range(game.world|length) %}
+                <tr>
+                    {% for j in range(game.world[0]|length) %}
+                        {% if game.world[i][j]%}
+                            <td class="cell living-cell"></td>
+                        {% else %}
+                            <td class="cell"></td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock %}
+    {% block scripts %}
+        {{ super() }}
+        <script>setInterval(() => window.location.reload(), 1000);</script>
+    {% endblock %}
+</body>
+</html>
