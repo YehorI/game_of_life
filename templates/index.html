@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
+    <form action="" method="post">
+        {{ form.csrf_token() }}
+        {% for field in form if field.name not in ("csrf_token", "submit") %}
+            {{ field.label }}
+
+            {{ field }}
+            <br>
+            <br>
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        {% endfor %}
+        {{ form.submit }}
+    <p>
+        {{ message }}<br>
+    </p>
+    </form>
     <a class="btn btn-primary" href="{{ url_for('live') }}">Создать жизнь</a>
 {% endblock %}

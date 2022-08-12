@@ -30,7 +30,7 @@ td {
 
 a, table {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -46,7 +46,7 @@ a, table {
 }
 
 .counter {
-    margin: 40px 3px 3px;
+    margin: 40px 20px 3px;
     padding: 5px;
     font-family: "Book Antiqua", "Arial";
     background: aliceblue;
@@ -196,4 +196,13 @@ a, table {
 .btn-warning:hover {
     background-color: #f0ad4e;
     border-color: #eea236
+}
+.cell_counter {
+    margin-top: 55px;
+    font-size: 20px;
+    font-family: "Arial";
+    background: aliceblue;
+    border: 1px solid indigo;
+    border-radius: 15%;
+    padding: 5px;
 }
